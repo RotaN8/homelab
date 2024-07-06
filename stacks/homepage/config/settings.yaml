@@ -1,0 +1,24 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/settings
+
+title: Homepage
+headerStyle: boxedWidgets
+language: es
+theme: dark
+color: slate
+
+base: https://dashboard.localhost/homepage
+
+quicklaunch:
+  searchDescriptions: true
+  hideInternetSearch: true
+  showSearchSuggestions: true
+  hideVisitURL: true
+  provider: brave # google, duckduckgo, bing, baidu, brave or custom
+
+showStats: true
+statusStyle: "dot"
+
+providers:
+  openweathermap: {{HOMEPAGE_VAR_OPENWEATHERMAP}}

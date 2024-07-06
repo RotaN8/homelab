@@ -1,0 +1,23 @@
+services:
+  uptime-kuma:
+    image: louislam/uptime-kuma:1
+    volumes:
+      - uptime-kuma_data:/app/data
+    ports:
+      - 127.0.0.1:5002:3001
+    restart: always
+    networks:
+      - reverse_proxy
+    labels:
+      - homepage.group=Monitoring
+      - homepage.name=Uptime kuma
+      - homepage.icon=uptime-kuma.svg
+      - homepage.href=https://services.localhost/
+      - homepage.description=Services status
+
+volumes:
+  uptime-kuma_data:
+
+networks:
+  reverse_proxy:
+    external: true

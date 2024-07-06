@@ -1,0 +1,11 @@
+dockge.localhost {
+	reverse_proxy dockge:5001
+}
+
+services.localhost {
+	reverse_proxy uptime-kuma:3001
+}
+
+dashboard.localhost {
+	reverse_proxy homepage:3000
+}
