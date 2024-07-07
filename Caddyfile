@@ -1,3 +1,14 @@
+#! Only add this section if you need to serve static files
+localhost {
+	root /srv
+	file_server {
+		browse
+		hide .git
+		precompressed zstd br gzip
+	}
+}
+#! ###
+
 dockge.localhost {
 	reverse_proxy dockge:5001
 }
