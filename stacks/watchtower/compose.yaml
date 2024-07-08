@@ -2,6 +2,7 @@ services:
   watchtower:
     container_name: watchtower
     image: containrrr/watchtower:latest
+    restart: unless-stopped
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
     command: --http-api-metrics
@@ -17,6 +18,7 @@ services:
   prometheus:
     container_name: prometheus
     image: prom/prometheus
+    restart: unless-stopped
     volumes:
       - ./prometheus/:/etc/prometheus/
       - prometheus:/prometheus/
@@ -28,6 +30,7 @@ services:
   grafana:
     container_name: grafana
     image: grafana/grafana
+    restart: unless-stopped
     ports:
       - 127.0.0.1:3000:3000
     environment:
