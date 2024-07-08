@@ -20,3 +20,7 @@ services.localhost {
 dashboard.localhost {
 	reverse_proxy homepage:3000
 }
+
+homarr.localhost {
+	reverse_proxy homarr:7575
+}
