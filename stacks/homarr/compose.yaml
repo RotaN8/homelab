@@ -7,13 +7,16 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock # Optional, only if you want docker integration
       - ./configs:/app/data/configs
       - ./icons:/app/public/icons
-      - ./data:/data
+      - homarr_data:/data
     environment:
       NODE_TLS_REJECT_UNAUTHORIZED: 0
     ports:
       - 7575:7575
     networks:
       - reverse_proxy
+
+volumes:
+  homarr_data:
 
 networks:
   reverse_proxy:
